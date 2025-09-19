@@ -1,1 +1,2 @@
-Hello, lovely world!
+Hello, lovely!
+Hello, world!
