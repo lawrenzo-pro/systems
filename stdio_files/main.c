@@ -85,14 +85,11 @@ Node read_employee_list(char *filename){
         }
         new_node->employee = temp_employee;
         new_node->next = NULL;
-
-        // Add the new node to the end of the list
-        if (head == NULL) {
+        if(head == NULL){
             head = new_node;
-            tail = new_node;
-        } else {
-            tail->next = new_node;
-            tail = new_node;
+        }
+        else{
+            add_employee_to_list(head,temp_employee);
         }
     }
 
@@ -122,6 +119,6 @@ int main(){
 
     //There is some weird behaviour here (It segfaults)
    Node got_from_file = read_employee_list("employees.bin");
-   print_employee_details(get_employee_by_id(got_from_file,0));
+   print_employee_details(get_employee_by_id(got_from_file,3));
     return 0;
 }
